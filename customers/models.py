@@ -1,95 +1,78 @@
 from django.db import models
-import uuid
-
-from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
-                                        PermissionsMixin)
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.core.mail import send_mail
-from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 
-class CustomAccountManager(BaseUserManager):
+class MyAccountManager(BaseUserManager):
 
-    def create_superuser(self, email, name, password, **other_fields):
+	def create_user(self, email, username, password=None):
+		if not email:
+			raise ValueError('Users must have an email address')
+		if not username:
+			raise ValueError('Users must have a username')
 
-        other_fields.setdefault('is_staff', True)
-        other_fields.setdefault('is_superuser', True)
-        other_fields.setdefault('is_active', True)
+		user = self.model(
+			email=self.normalize_email(email),
+			username=username,
+		)
 
-        if other_fields.get('is_staff') is not True:
-            raise ValueError(
-                'Superuser must be assigned to is_staff=True.')
-        if other_fields.get('is_superuser') is not True:
-            raise ValueError(
-                'Superuser must be assigned to is_superuser=True.')
+		user.set_password(password)
+		user.save(using=self._db)
+		return user
 
-        return self.create_user(email, name, password, **other_fields)
-
-    def create_user(self, email, name, password, **other_fields):
-
-        if not email:
-            raise ValueError(_('You must provide an email address'))
-
-        email = self.normalize_email(email)
-        user = self.model(email=email, name=name,
-                          **other_fields)
-        user.set_password(password)
-        user.save()
-        return user
-
-
-class Customer(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_('email address'), unique=True)
-    name = models.CharField(max_length=150)
-    mobile = models.CharField(max_length=20, blank=True)
-    is_active = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    objects = CustomAccountManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
-
-    class Meta:
-        verbose_name = "Accounts"
-        verbose_name_plural = "Accounts"
-
-    def email_user(self, subject, message):
-        send_mail(
-            subject,
-            message,
-            'l@1.com',
-            [self.email],
-            fail_silently=False,
-        )
-
-    def __str__(self):
-        return self.name
+	def create_superuser(self, email, username, password):
+		user = self.create_user(
+			email=self.normalize_email(email),
+			password=password,
+			username=username,
+		)
+		user.is_admin = True
+		user.is_staff = True
+		user.is_superuser = True
+		user.save(using=self._db)
+		return user
 
 
-class Address(models.Model):
-    """
-    Address
-    """
+class Account(AbstractBaseUser):
+	email = models.EmailField(verbose_name="email", max_length=60, unique=True)
+	username = models.CharField(max_length=30, unique=True)
+	date_joined	= models.DateTimeField(verbose_name='date joined', auto_now_add=True)
+	last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
+	is_admin = models.BooleanField(default=False)
+	is_active = models.BooleanField(default=True)
+	is_staff = models.BooleanField(default=False)
+	is_superuser = models.BooleanField(default=False)
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    customer = models.ForeignKey(Customer, verbose_name=_("Customer"), on_delete=models.CASCADE)
-    full_name = models.CharField(_("Full Name"), max_length=150)
-    phone = models.CharField(_("Phone Number"), max_length=50)
-    postcode = models.CharField(_("Postcode"), max_length=50)
-    address_line = models.CharField(_("Address Line 1"), max_length=255)
-    address_line2 = models.CharField(_("Address Line 2"), max_length=255)
-    town_city = models.CharField(_("Town/City/State"), max_length=150)
-    delivery_instructions = models.CharField(_("Delivery Instructions"), max_length=255)
-    created_at = models.DateTimeField(_("Created at"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
-    default = models.BooleanField(_("Default"), default=False)
+	USERNAME_FIELD = 'email'
+	REQUIRED_FIELDS = ['username']
+	objects = MyAccountManager()
 
-    class Meta:
-        verbose_name = "Address"
-        verbose_name_plural = "Addresses"
+	def __str__(self):
+		return self.email
 
-    def __str__(self):
-        return "Address"
+	# For checking permissions. to keep it simple all admin have ALL permissons
+	def has_perm(self, perm, obj=None):
+		return self.is_admin
+
+	# Does this user have permission to view this app? (ALWAYS YES FOR SIMPLICITY)
+	def has_module_perms(self, app_label):
+		return True
+
+	def email_user(self, subject, message):
+		send_mail(
+			subject,
+			message,
+			'l@1.com',
+			[self.email],
+			fail_silently=False,
+		)
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+	if created:
+		Token.objects.create(user=instance)
