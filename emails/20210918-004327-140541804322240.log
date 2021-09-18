@@ -1,0 +1,12 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Verify your email
+From: webmaster@localhost
+To: hashemi@gmail.com
+Date: Sat, 18 Sep 2021 00:43:27 -0000
+Message-ID: <163192580797.27299.16391022389413580412@plumpi-GL553VE>
+
+Hi seyyed Use the link below to verify your email 
+http://127.0.0.1:8000/api/v1/customers/email-verify/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjMxOTI1ODY3LCJqdGkiOiIwZDNjMTA2NmQxNTY0YjMwOGJmZGU4MmZmY2JlNDc0MSIsInVzZXJfaWQiOjJ9.R0OYe_YWVmmux2DGuhaLV_5VL5tvT4yxicNrqmaG_6w
+-------------------------------------------------------------------------------

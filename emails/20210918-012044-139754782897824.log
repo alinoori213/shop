@@ -1,0 +1,13 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Reset your passsword
+From: webmaster@localhost
+To: hashemi@gmail.com
+Date: Sat, 18 Sep 2021 01:20:44 -0000
+Message-ID: <163192804427.1603.1280917357860644580@plumpi-GL553VE>
+
+Hello, 
+ Use link below to reset your password  
+http://127.0.0.1:8000/api/v1/customers/password-reset/Mg/at5d2k-4b4ab0b4026cdbf04d0558645fc2e961/
+-------------------------------------------------------------------------------
