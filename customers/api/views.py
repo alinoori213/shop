@@ -1,5 +1,9 @@
+import json
+
 from django.shortcuts import render
 from rest_framework import generics, status, views, permissions
+from rest_framework.renderers import TemplateHTMLRenderer
+
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, EmailVerificationSerializer, LoginSerializer, LogoutSerializer
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -102,11 +106,22 @@ class VerifyEmail(views.APIView):
 
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
+    renderer_classes = [TemplateHTMLRenderer]
+
+    template_name = 'customers/login.html'
+
+    def get(self, request):
+
+        serializer = self.serializer_class()
+        return Response({'serializer': serializer})
 
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
+        data = request.data
+
+        serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+
+        return Response(serializer.data, status=status.HTTP_200_OK,)
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
@@ -136,6 +151,7 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         return Response({'success': 'We have sent you a link to reset your password'}, status=status.HTTP_200_OK)
 
 
+
 class PasswordTokenCheckAPI(generics.GenericAPIView):
     serializer_class = SetNewPasswordSerializer
 
@@ -153,7 +169,6 @@ class PasswordTokenCheckAPI(generics.GenericAPIView):
         except DjangoUnicodeDecodeError as identifier:
             if not PasswordResetTokenGenerator().check_token(user, token):
                 return Response({'error': 'Token is not valid'}, status=status.HTTP_401_UNAUTHORIZED)
-
 
 
 
