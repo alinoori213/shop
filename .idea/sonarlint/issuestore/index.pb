@@ -5,9 +5,6 @@ B
 orders/api/urls.py,8/3/831f1cd49010da4b540fd5def719c1bd06ea3cd2
 9
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 A
 products/forms.py,1/8/18290037a6c6f23e022d2baa2e1e1ce35b23ac91
 C
@@ -68,15 +65,7 @@ E
 customers/api/urls.py,2/d/2d15567c74cbff064d2bb5d8e52f9ada46acb519
 F
 customers/api/views.py,5/1/51368079daff8072f14faad935980ef86ccc2ce6
-I
-store/tests/test_views.py,1/2/1248d0e1b15d429dfefef4de2175e78615ea9565
-J
-store/tests/test_models.py,c/f/cf2e0e6793d032d7481488d6018a94183e4917bf
 <
 shop/wsgi.py,e/d/edef28b5cb00c203d0be335a7e115fb09fd2a0c8
 V
 &products/templates/products/store.html,e/c/ec8fa66d991ddd489a3338077ddc8731536f34e1
-@
-shop/settings.py,5/5/553b916bffbe0416d3adda7793a656337b27f88b
-<
-shop/urls.py,6/8/688d7dbd6a1beeee18f20e4c3afcbbbd77eb276d
