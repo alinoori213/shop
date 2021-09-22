@@ -69,3 +69,5 @@ F
 shop/wsgi.py,e/d/edef28b5cb00c203d0be335a7e115fb09fd2a0c8
 V
 &products/templates/products/store.html,e/c/ec8fa66d991ddd489a3338077ddc8731536f34e1
+J
+store/tests/test_models.py,c/f/cf2e0e6793d032d7481488d6018a94183e4917bf
