@@ -7,10 +7,10 @@
 <main class="pt-5">
   <div class="container" style="max-width: 1000px">
     <div class="col-12">
-      <h1 class="h2">Your Basket</h1>
+      <h1 class="h2">Basket</h1>
     </div>
     <div class="col-12">
-      <p>Manage your <b>items</b> in your basket</p>
+      <p>Manage your <b>products</b> </p>
     </div>
     <hr />
   </div>
@@ -27,13 +27,15 @@
         </div>
         <div class="text-end">
 
-          <div class="">Sub Total: <span class="fw-bold">$</span><div id="subtotal" class="d-inline-flex fw-bold">{{basket.get_subtotal_price}}</div></div>
-          <div class="pt-2">Total to pay: <span class="fw-bold h5">$</span><span id="total" class="fw-bold h5">{{basket.get_total_price}}</span></div>
+          <div class="pt-2">price: <span class="fw-bold h5">$</span><span id="total" class="fw-bold h5">{{basket.get_total_price}}</span></div>
 
         </div>
       </div>
-      <div class="col-md-5 col-lg-4 order-md-last p-0 order-3">
+        <label for="Discount" class="form-label">Discount code</label>
+                    <input type="text" class="form-control" id="discount" placeholder="">
         <div class="d-grid gap-2 ">
+      <div class="col-md-5 col-lg-4 order-md-last p-0 order-3">
+
           <a role="button" href="{% url "payment:basket" %}" class="btn btn-success fw-bold" type="button">Checkout</a>
         </div>
       </div>

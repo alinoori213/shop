@@ -41,28 +41,10 @@ C
 store/admin.py,2/5/25ca86a5a44b0f10caef2fd92c1f75b2d7ef0105
 H
 store/api/serializers.py,b/1/b1f722e848e38dee28850ea84ef8da994f3846b9
-@
-account/forms.py,b/8/b8e2f96492aecc66a1bafc71d69f5ca62bb068a0
 ?
 account/apps.py,3/8/3899eaa57c40eb771c98133213ba36b6448c9fff
 @
 account/admin.py,d/2/d25b89b2b521eab8cc69654cb14f7b5c9baa0078
-A
-account/models.py,9/9/9937dda3027dc290afca56146cdf71d4733d0e5b
-A
-account/tokens.py,7/d/7d69cefcc6bd47f538abe2c7ff9fb7c99d6f7149
-a
-1account/templates/account/activation_invalid.html,9/3/9389f643bcc3c372b08d310eadaec60504d7b0b6
-X
-(account/templates/account/dashboard.html,4/9/498e132394fcc1dcbcb4d13bbd324d0a8d81325f
-[
-+account/templates/account/edit_details.html,6/e/6e13ed95a9b48d1a516154c25c0e588096add77c
-c
-3account/templates/account/password_reset_email.html,4/0/40207119e7c54dfe2188c4bfc5167885a7bd3488
-e
-5account/templates/account/password_reset_confirm.html,5/f/5fa5f433c547ae9a6fdae11e6dfaeca3708479e2
-[
-+account/templates/account/reset_status.html,3/8/38bd5128db7a6d834a15ec63ddbd6525bc293e48
 L
 customers/api/serializers.py,1/b/1b876b9d71c2605413ad04f99b19f52c53d3b1e3
 X
@@ -83,13 +65,7 @@ B
 customers/admin.py,b/9/b97617bb36b9b498ed8e2ab252eb0bd68256410d
 F
 customers/renderers.py,4/b/4b0a74be2ddd0c382a08403d37f2777fb6d80e13
-9
-	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 E
 customers/api/urls.py,2/d/2d15567c74cbff064d2bb5d8e52f9ada46acb519
-T
-$account/templates/account/login.html,6/c/6cecc1addd3690120749d086b258cd1d52ebe412
-@
-account/views.py,5/8/584f03f4131c5dfe019da9d46a8e94181b3b5821
 R
 "account/migrations/0001_initial.py,c/f/cfd55c10e5aa92f402d8fd4a9da60f1cb4d3fa7d

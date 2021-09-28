@@ -171,7 +171,7 @@ REST_FRAMEWORK = {
     ),
     'PAGE_SIZE': 1,
 }
-
+BASKET_SESSION_ID = 'basket'
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=10),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
