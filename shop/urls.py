@@ -41,12 +41,11 @@ urlpatterns = [
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
-    path('orders/', include('orders.urls')),
-    path('products/', include('products.urls')),
-    path('customers/', include('customers.urls')),
-    path('account/', include('account.urls')),
-    path('basket/', include('basket.urls')),
-    path('', include('store.urls')),
+    path('orders/', include('orders.urls', namespace='orders')),
+    path('account/', include('account.urls', namespace='account')),
+    path('basket/', include('basket.urls', namespace='basket')),
+    path('payment/', include('payment.urls', namespace='payment')),
+    path('', include('store.urls', namespace='store')),
     path('api/v1/', include('core.api.urls')),
 
 ]

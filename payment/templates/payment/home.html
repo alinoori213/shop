@@ -19,7 +19,7 @@
     box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075), 0 0 0px rgba(255, 0, 0, 0.6);
   }
 </style>
-
+<from>
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="col-md-12">
@@ -62,7 +62,7 @@
                     <label for="country" class="form-label">Country</label>
                     <select class="form-select" id="country" required>
                       <option value="">Choose...</option>
-                      <option>United States</option>
+                      <option>iran/option>
                     </select>
                     <div class="invalid-feedback">
                       Please select a valid country.
@@ -72,7 +72,7 @@
                     <label for="state" class="form-label">State</label>
                     <select class="form-select" id="state" required>
                       <option value="">Choose...</option>
-                      <option>California</option>
+                      <option>tehran</option>
                     </select>
                     <div class="invalid-feedback">
                       Please provide a valid state.
@@ -87,13 +87,10 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <h4 class="mb-3">Payment</h4>
-                <label for="card-element">Credit or debit card</label>
-                <div id="card-element" class="form-control form-control-payment">
-                  <!-- Payment elements will appear here -->
-                </div>
+                  <p> price : {{ total }}</p>
+
                 <hr class="my-4">
-                <button id="submit" class="btn btn-primary w-100 fw-bold" data-secret="{{ client_secret }}">Pay</button>
+                <button id="submit" class="btn btn-primary w-100 fw-bold">Pay</button>
               </form>
             </div>
           </div>
@@ -102,13 +99,11 @@
     </div>
   </div>
 </div>
-
+</from>
 
 <script>
-    {% comment %} Make csrf token availble in JS files {% endcomment %}
-    var CSRF_TOKEN = '{{ csrf_token }}';
+   
+
 </script>
-<script src="https://js.stripe.com/v3/"></script>
-<script src="{% static 'payment/index.js' %}" data-rel-js></script>
 
 {% endblock %}
