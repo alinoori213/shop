@@ -19,8 +19,6 @@ A
 core/api/views.py,4/1/41bb43a5a85973710f4024305ed0e1b39d716c4a
 <
 shop/wsgi.py,e/d/edef28b5cb00c203d0be335a7e115fb09fd2a0c8
-J
-store/tests/test_models.py,c/f/cf2e0e6793d032d7481488d6018a94183e4917bf
 E
 store/api/__init__.py,f/5/f52f103ad8e47f91d076e91f3bb15b05cfe8b70a
 C
@@ -89,12 +87,8 @@ K
 store/context_processors.py,8/c/8c5eb4d27fd3f84c39e130e5e6df4cf4af7641ae
 D
 store/serializers.py,9/8/985b8f426edc2f85bcb436e38c7e7408fafcf230
-?
-store/models.py,8/5/857aba1eb28d6f979457c85038eaf203d1250cac
 >
 store/forms.py,e/4/e4febe77ac256be526b1280b5564cc221f4247f1
-@
-payment/tests.py,2/c/2cf1c6e5b776beb6a7905238d7b8becd8e9f2100
 O
 store/templates/store/home.html,f/e/fe9ea1aa988d0237b08a7b5b6f56c132f1b11ef8
 >

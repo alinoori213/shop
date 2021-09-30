@@ -10,6 +10,7 @@ from orders.forms import MyForm
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 from orders.models import Order, OrderItem
+from store.models import Product
 from basket.basket import Basket
 from orders.views import payment_confirmation
 
@@ -40,8 +41,8 @@ def BasketView(request):
 
     basket = Basket(request)
     total = basket.get_total_price()
-    print(type(basket.basket))
-    myprint(basket.basket)
+    some = basket.basket.keys()
+
     if request.method == 'POST':
         form = MyForm(request.POST)
         if form.is_valid():
@@ -56,6 +57,14 @@ def BasketView(request):
             obj1.total_paid = total
             obj1.user = request.user
             obj1.save()
+            for i in basket.basket:
+                temp_product_id = i
+                prd = Product.objects.get(id=i)
+                temp_product_price = basket.basket[i]['price']
+                temp_product_qty = basket.basket[i]['qty']
+                obj = OrderItem.objects.create(order=obj1, product=prd, price=temp_product_price, quantity=temp_product_qty)
+                obj.save()
+
             return redirect(reverse('payment:order_placed'))
 
     else:
