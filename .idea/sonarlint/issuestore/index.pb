@@ -27,8 +27,6 @@ C
 store/admin.py,2/5/25ca86a5a44b0f10caef2fd92c1f75b2d7ef0105
 H
 store/api/serializers.py,b/1/b1f722e848e38dee28850ea84ef8da994f3846b9
-?
-account/apps.py,3/8/3899eaa57c40eb771c98133213ba36b6448c9fff
 R
 "account/migrations/0001_initial.py,c/f/cfd55c10e5aa92f402d8fd4a9da60f1cb4d3fa7d
 Z
@@ -43,30 +41,10 @@ Z
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 >
 basket/apps.py,9/c/9c903f2890e0e603eef166133d3439c7dd25fd68
-g
-7account/templates/account/account_activation_email.html,a/2/a2f3f813a1f6900fa25b2106b467b1e8a1ecc710
-a
-1account/templates/account/activation_invalid.html,9/3/9389f643bcc3c372b08d310eadaec60504d7b0b6
-]
--account/templates/account/delete_confirm.html,4/4/4405340dcdff59ca5cbca61403cf1e2147a06057
-X
-(account/templates/account/dashboard.html,4/9/498e132394fcc1dcbcb4d13bbd324d0a8d81325f
-[
-+account/templates/account/edit_details.html,6/e/6e13ed95a9b48d1a516154c25c0e588096add77c
 [
 +account/templates/account/reset_status.html,3/8/38bd5128db7a6d834a15ec63ddbd6525bc293e48
-W
-'account/templates/account/register.html,3/a/3aadf978709a291c84a8fe16c41b9ffddcfca763
-b
-2account/templates/account/password_reset_form.html,8/d/8de34ff184209843a11b7a4929b38277fe33e114
-c
-3account/templates/account/password_reset_email.html,4/0/40207119e7c54dfe2188c4bfc5167885a7bd3488
-T
-$account/templates/account/login.html,6/c/6cecc1addd3690120749d086b258cd1d52ebe412
 S
 #store/templates/store/category.html,e/4/e46ff1f6e3452733033e495cfaaf9d0f559c55e0
-e
-5account/templates/account/password_reset_confirm.html,5/f/5fa5f433c547ae9a6fdae11e6dfaeca3708479e2
 L
 static/basket/css/basket.css,9/f/9f868a3de62a65e8d8a2181d93632c5de1abd1b2
 H
@@ -79,10 +57,6 @@ H
 basket/urls.py,a/8/a86ccf2ba047c9b9ff639570c6949a65e8475bf8
 >
 orders/urls.py,1/f/1f222edc8275fe14f1bc092f233feb495d005f84
-@
-account/tests.py,8/1/816a718040e81705eecf3d2ee5661e3df09ee75b
-?
-account/urls.py,f/3/f34ca7bbc685e6c31b00255009a066afed7617b6
 K
 store/context_processors.py,8/c/8c5eb4d27fd3f84c39e130e5e6df4cf4af7641ae
 D
@@ -91,8 +65,6 @@ D
 store/forms.py,e/4/e4febe77ac256be526b1280b5564cc221f4247f1
 O
 store/templates/store/home.html,f/e/fe9ea1aa988d0237b08a7b5b6f56c132f1b11ef8
->
-store/views.py,c/8/c842493f8c3c6ac29ef61cab9fc46d3af02e60bc
 T
 $payment/templates/payment/error.html,0/b/0bbb0cac5530b9cfd0fccde59c0551f38d277e99
 ?
@@ -114,5 +86,3 @@ C
 templates/main.html,7/0/70463c664bcf38fa5d46b8f3fd74b75dac46c512
 C
 templates/base.html,d/a/da7c237b85a69c00a9ab8c189bf63e22070fcac3
-@
-account/admin.py,d/2/d25b89b2b521eab8cc69654cb14f7b5c9baa0078
