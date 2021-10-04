@@ -21,8 +21,6 @@ A
 shop/wsgi.py,e/d/edef28b5cb00c203d0be335a7e115fb09fd2a0c8
 E
 store/api/__init__.py,f/5/f52f103ad8e47f91d076e91f3bb15b05cfe8b70a
-C
-account/api/urls.py,6/a/6ab60c21e942afe7341aea884a1c11c68990f618
 >
 store/admin.py,2/5/25ca86a5a44b0f10caef2fd92c1f75b2d7ef0105
 H
@@ -35,10 +33,6 @@ Z
 shop/urls.py,6/8/688d7dbd6a1beeee18f20e4c3afcbbbd77eb276d
 @
 core/api/urls.py,8/5/850da1711155bfe3e30c7559dde5b01bddf51cdf
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-9
-	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 >
 basket/apps.py,9/c/9c903f2890e0e603eef166133d3439c7dd25fd68
 [
@@ -49,8 +43,6 @@ L
 static/basket/css/basket.css,9/f/9f868a3de62a65e8d8a2181d93632c5de1abd1b2
 H
 static/core/css/base.css,8/2/823e2bbfbfa118af035cc2011fdccc1f6f245e6d
-@
-shop/settings.py,5/5/553b916bffbe0416d3adda7793a656337b27f88b
 ?
 basket/tests.py,5/d/5d5d622a5c575b351080daaf58b593e793b763d0
 >
@@ -67,16 +59,12 @@ O
 store/templates/store/home.html,f/e/fe9ea1aa988d0237b08a7b5b6f56c132f1b11ef8
 T
 $payment/templates/payment/error.html,0/b/0bbb0cac5530b9cfd0fccde59c0551f38d277e99
-?
-payment/urls.py,3/a/3a15951f4042b9731be46291bbe57697e2104ead
 Q
 !store/templates/store/single.html,9/9/99996c2c513e763573e62995a89c8877cb9a2102
 T
 $basket/templates/basket/summary.html,e/1/e1f8f44e68bae269a14b685edcd3367e6a6f8ed9
 Z
 *payment/templates/payment/orderplaced.html,9/7/976f8c5544b5b12705734142837a046aef16fd96
-S
-#payment/templates/payment/home.html,8/e/8e405c50fe382aae16e1a560362c551fcbdd0749
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302

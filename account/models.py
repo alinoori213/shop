@@ -1,5 +1,6 @@
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
                                         PermissionsMixin)
+from django.conf import settings
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -79,8 +80,12 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
 
 
 class Discount(models.Model):
-    customer = models.OneToOneField(UserBase, on_delete=models.CASCADE)
+    customer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='discountCode')
     discount_code = models.CharField(max_length=50)
     discount_percent = models.PositiveIntegerField()
     expire_time = models.DateTimeField()
+    used = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.discount_code} - {self.customer}'
 
