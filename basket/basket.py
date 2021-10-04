@@ -9,12 +9,14 @@ class Basket():
     can be inherited or overrided, as necessary.
     """
 
-    def __init__(self, request):
+    def __init__(self, request, total=0):
         self.session = request.session
+        self.total = total
         basket = self.session.get('skey')
         if 'skey' not in request.session:
             basket = self.session['skey'] = {}
         self.basket = basket
+
 
     def add(self, product, qty):
         """
@@ -62,7 +64,8 @@ class Basket():
         self.save()
 
     def get_total_price(self):
-        return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
+        self.total = sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
+        return self.total
 
     def delete(self, product):
         """

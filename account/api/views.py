@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from .serializers import DiscountSerlizer
@@ -12,8 +12,10 @@ from datetime import datetime
 import pytz
 
 
+
 class CheckDiscount(generics.GenericAPIView):
     serializer_class = DiscountSerlizer
+
 
     def post(self, request):
         code = request.data['discount_code']
@@ -26,7 +28,10 @@ class CheckDiscount(generics.GenericAPIView):
             if code == codes.discount_code and now < codes.expire_time and codes.used == False:
                 total = basket.get_total_price()
                 total = float(total)
-                final_price = total*(codes.discount_percent/100)
+                final_price = total - total*(codes.discount_percent/100)
+                basket.total = final_price
+
+                print(basket.total)
                 data = {
                     'final_price': final_price,
                 }

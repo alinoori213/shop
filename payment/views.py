@@ -64,6 +64,6 @@ def BasketView(request):
     else:
         form = MyForm()
 
-    return render(request, 'payment/home.html', {'form': form})
+    return render(request, 'payment/home.html', {'form': form,'total':total})
 
 

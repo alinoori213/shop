@@ -30,6 +30,17 @@
               <h3 class="mb-3">payment</h3>
 
               <div id="card-errors" class="a" role="alert"></div>
+             <form id="discount_code_form" action="" class="mt-5">
+                 {% csrf_token %}
+                                            <label for="discount_code">Discount Code</label>
+
+                                            <input type="text" class="form-control" id="discount_code"
+                                                   name="discount_code"
+                                                   placeholder="discount_code">
+                                            <hr>
+                                            <button type="submit"
+                                                    class="btn btn-primary">Confirm code</button>
+                                        </form>
               <form  method="post" >
 
 
@@ -49,6 +60,7 @@
     		<div >
                 <hr>
     			<div >
+            <p id="final_price">total : {{ total }}</p>
             <button type="submit" class="btn btn-primary btn-lg">pay</button>
     			</div>
     		</div>
@@ -63,9 +75,8 @@
 </div>
 
 
-<script>
-   
 
-</script>
+<script src="{% static 'account/discount.js' %}"></script>
+
 
 {% endblock %}

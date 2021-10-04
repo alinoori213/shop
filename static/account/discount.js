@@ -8,11 +8,11 @@ $('#discount_code_form').on('submit', function (e) {
         url: url,
         data: JSON.stringify({
             'discount_code': discount_code,
+
         }),
         success: function (data) {
             $("#final_price").html(data['final_price'])
-            $("#discount").html(data['discount'])
-            $("#discount").append('%')
+
 
         },
         error: function (xhr, errmsg, err) {
