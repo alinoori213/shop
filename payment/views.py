@@ -51,6 +51,7 @@ def BasketView(request):
             obj1.total_paid = total
             obj1.user = request.user
             obj1.save()
+            print(total)
             for i in basket.basket:
                 temp_product_id = i
                 prd = Product.objects.get(id=i)
@@ -64,6 +65,6 @@ def BasketView(request):
     else:
         form = MyForm()
 
-    return render(request, 'payment/home.html', {'form': form,'total':total})
+    return render(request, 'payment/home.html', {'form': form, 'total': total})
 
 

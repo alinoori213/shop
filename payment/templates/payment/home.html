@@ -30,17 +30,7 @@
               <h3 class="mb-3">payment</h3>
 
               <div id="card-errors" class="a" role="alert"></div>
-             <form id="discount_code_form" action="" class="mt-5">
-                 {% csrf_token %}
-                                            <label for="discount_code">Discount Code</label>
-
-                                            <input type="text" class="form-control" id="discount_code"
-                                                   name="discount_code"
-                                                   placeholder="discount_code">
-                                            <hr>
-                                            <button type="submit"
-                                                    class="btn btn-primary">Confirm code</button>
-                                        </form>
+            <p>total : </p><p id ='total'>{{ total }}</p>
               <form  method="post" >
 
 
@@ -60,11 +50,20 @@
     		<div >
                 <hr>
     			<div >
-            <p id="final_price">total : {{ total }}</p>
+
             <button type="submit" class="btn btn-primary btn-lg">pay</button>
     			</div>
     		</div>
         </form>
+            <hr>
+             <form id="discount_code_form" action="" class="mt-5 mb-5">
+                 <label for="discount_code">discount code</label>
+                 <input type="text" class="form-control" id="discount_code"
+                        name="discount_code"
+                        placeholder="discount code">
+
+                 <button type="submit" class="btn btn-primary form-control ">submit discount</button>
+             </form>
 
             </div>
           </div>
@@ -75,8 +74,51 @@
 </div>
 
 
+<script>
+{#$(document).on("click", ".discountsub", function (e) {#}
+{#    e.preventDefault();#}
+{#    var prodid = document.getElementById("discount").value();#}
+{#    $.ajax({#}
+{#      type: "POST",#}
+{#      url: 'http://127.0.0.1:8000/api/v1/account/discount',#}
+{#      data: {#}
+{#        discount_code: prodid,#}
+{#        action: "post",#}
+{#      },#}
+{#      success: function (json) {#}
+{##}
+{#        total = (parseFloat(json.final_price) ).toFixed(2);#}
+{#        document.getElementById("total").innerHTML = total;#}
+{#      },#}
+{#      error: function (xhr, errmsg, err) {},#}
+{#    });#}
+{#  });#}
+$('#discount_code_form').on('submit', function (e) {
+    var form = $(this);
+    var url ='http://127.0.0.1:8000/api/v1/account/discount'
+    let discount_code = $('#discount_code').val()
+    let user_id = $('#user_id').val()
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: JSON.stringify({
+            'discount_code': discount_code,
 
-<script src="{% static 'account/discount.js' %}"></script>
+        }),
+        success: function (data) {
+            $("#total").html(data['final_price'])
+
+        },
+        error: function (xhr, errmsg, err) {
+
+        },
+        contentType: "application/json",
+        dataType: 'json',
+    });
+});
+</script>
+
 
 
 {% endblock %}

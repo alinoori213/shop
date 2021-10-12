@@ -11,7 +11,7 @@ $('#discount_code_form').on('submit', function (e) {
 
         }),
         success: function (data) {
-            $("#final_price").html(data['final_price'])
+            $("#final_price").html(final_price)
 
 
         },
