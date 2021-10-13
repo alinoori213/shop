@@ -1,6 +1,4 @@
 
-C
-static/css/main.css,1/d/1d911fa3e8e9e880e642b3cfb08a49276784f29a
 D
 core/api/__init__.py,1/f/1fbf2dbc30c23e7d80aa0ecbe660d46050fe1715
 G
@@ -23,18 +21,12 @@ E
 store/api/__init__.py,f/5/f52f103ad8e47f91d076e91f3bb15b05cfe8b70a
 R
 "account/migrations/0001_initial.py,c/f/cfd55c10e5aa92f402d8fd4a9da60f1cb4d3fa7d
-Z
-*emails/20210927-221526-139876484173008.log,9/b/9b5094ebf9c8d4e46a18a3ffb15081836f28d279
 <
 shop/urls.py,6/8/688d7dbd6a1beeee18f20e4c3afcbbbd77eb276d
 @
 core/api/urls.py,8/5/850da1711155bfe3e30c7559dde5b01bddf51cdf
-[
-+account/templates/account/reset_status.html,3/8/38bd5128db7a6d834a15ec63ddbd6525bc293e48
 L
 static/basket/css/basket.css,9/f/9f868a3de62a65e8d8a2181d93632c5de1abd1b2
-H
-static/core/css/base.css,8/2/823e2bbfbfa118af035cc2011fdccc1f6f245e6d
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
@@ -44,24 +36,12 @@ X
 -account/templates/account/delete_confirm.html,4/4/4405340dcdff59ca5cbca61403cf1e2147a06057
 [
 +account/templates/account/edit_details.html,6/e/6e13ed95a9b48d1a516154c25c0e588096add77c
-e
-5account/templates/account/password_reset_confirm.html,5/f/5fa5f433c547ae9a6fdae11e6dfaeca3708479e2
-W
-'account/templates/account/register.html,3/a/3aadf978709a291c84a8fe16c41b9ffddcfca763
-b
-2account/templates/account/password_reset_form.html,8/d/8de34ff184209843a11b7a4929b38277fe33e114
-@
-account/admin.py,d/2/d25b89b2b521eab8cc69654cb14f7b5c9baa0078
 9
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-@
-account/forms.py,b/8/b8e2f96492aecc66a1bafc71d69f5ca62bb068a0
 A
 store/api/urls.py,5/4/5406be4748a74b2054517982f358441ff4b416e7
-C
-account/api/urls.py,6/a/6ab60c21e942afe7341aea884a1c11c68990f618
 @
 shop/settings.py,5/5/553b916bffbe0416d3adda7793a656337b27f88b
 T

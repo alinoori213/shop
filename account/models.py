@@ -5,7 +5,8 @@ from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
-
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import Permission
 
 class CustomAccountManager(BaseUserManager):
 
@@ -74,6 +75,11 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
             [self.email],
             fail_silently=False,
         )
+
+    def custom_permission(self):
+        staffs = UserBase.objects.filter(is_staff=True)
+        for staff in staffs:
+            staff.user_permissions.add('auth.view_user')
 
     def __str__(self):
         return self.user_name
