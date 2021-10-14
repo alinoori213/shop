@@ -34,8 +34,6 @@ X
 +account/templates/account/edit_details.html,6/e/6e13ed95a9b48d1a516154c25c0e588096add77c
 9
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 A
 store/api/urls.py,5/4/5406be4748a74b2054517982f358441ff4b416e7
 T
