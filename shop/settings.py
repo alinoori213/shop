@@ -40,14 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_framework_simplejwt.token_blacklist',
-    'drf_yasg',
-    'mptt',
     'orders',
     'account',
     'store',
     'basket',
     'payment',
+    'bootstrap4',
 ]
 
 
@@ -98,17 +96,29 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'shop',
+#         'USER': 'postgres',
+#         'PASSWORD': 'new.admin.',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shop',
-        'USER': 'postgres',
-        'PASSWORD': 'new.admin.',
-        'HOST': 'localhost',
+        'NAME': 'shop-db',
+        'USER': 'root',
+        'PASSWORD': '8IXyrNaWhEgzc1e8cA6BWSGS',
+        'HOST': 'polly.iran.liara.ir',
         'PORT': '5432',
 
     }
 }
+
 
 
 # Password validation
@@ -170,16 +180,14 @@ REST_FRAMEWORK = {
         'rest_framework.pagination.PageNumberPagination',
 
     ),
-    'PAGE_SIZE': 1,
+    'PAGE_SIZE': 5,
 }
 BASKET_SESSION_ID = 'basket'
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=10),
-    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
-}
+
 AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = BASE_DIR / 'emails'
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = BASE_DIR / 'emails'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

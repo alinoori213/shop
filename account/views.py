@@ -4,9 +4,10 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-
+from django.conf import settings
 from orders.views import user_orders
 
 from .forms import RegistrationForm, UserEditForm
@@ -86,3 +87,11 @@ def account_activate(request, uidb64, token):
         return redirect('account:dashboard')
     else:
         return render(request, 'account/activation_invalid.html')
+
+
+def custom_logout(request):
+    basket = request.session.get(settings.BASKET_SESSION_ID)
+    logout(request)
+    if basket:
+        request.session[settings.BASKET_SESSION_ID] = basket
+    return redirect(reverse('account:login'))
