@@ -4,8 +4,6 @@ D
 G
 store/tests/__init__.py,9/0/90c30b146510d8979d1a16d0d7fa1a2a4de582b4
 Z
-*emails/20210918-004327-140541804322240.log,5/3/530dd2f906459287b5d77bd3f8706d39d2f8acf4
-Z
 *emails/20210918-005736-140488860057504.log,8/c/8cd35287ea95292d8fc2e61c29d0bc9016fde78f
 Z
 *emails/20210918-010443-140140933436416.log,f/6/f63135691e638d6ded2fd38150ce7b220b9c3ae1
@@ -23,23 +21,12 @@ R
 core/api/urls.py,8/5/850da1711155bfe3e30c7559dde5b01bddf51cdf
 L
 static/basket/css/basket.css,9/f/9f868a3de62a65e8d8a2181d93632c5de1abd1b2
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-X
-(account/templates/account/dashboard.html,4/9/498e132394fcc1dcbcb4d13bbd324d0a8d81325f
 ]
 -account/templates/account/delete_confirm.html,4/4/4405340dcdff59ca5cbca61403cf1e2147a06057
-[
-+account/templates/account/edit_details.html,6/e/6e13ed95a9b48d1a516154c25c0e588096add77c
 9
 	manage.py,3/1/3156ad13e4d695cd526bbb7b031016ecba842270
 A
 store/api/urls.py,5/4/5406be4748a74b2054517982f358441ff4b416e7
-T
-$account/templates/account/login.html,6/c/6cecc1addd3690120749d086b258cd1d52ebe412
-?
-orders/views.py,9/7/97b53262cdb30087af0a40ba2e56175486bd4d51
 J
 account/api/serializers.py,9/d/9df14a0cc8be12bd277f87fdab81c76c39a7d797
 Z

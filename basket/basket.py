@@ -62,11 +62,14 @@ class Basket():
             self.basket[product_id]['qty'] = qty
         self.save()
 
-    def get_total_price(self,discount=0):
-        if discount == 0:
-            return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
-        return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values()) - sum(Decimal(item['price']) * item['qty'] for item in self.basket.values()) * Decimal(float(discount/100))
-
+    def get_total_price(self, discount=0):
+        # if discount == 0:
+        #     return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
+        # return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values()) - sum(Decimal(item['price']) * item['qty'] for item in self.basket.values()) * Decimal(float(discount/100))
+        total_price_without_discount = sum(
+            Decimal(item['price']) * item['qty'] for item in self.basket.values())
+        final_price = total_price_without_discount - Decimal(float(discount / 100)) * total_price_without_discount
+        return final_price
         # return sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
 
 

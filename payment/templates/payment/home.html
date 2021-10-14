@@ -56,6 +56,9 @@
     		</div>
         </form>
             <hr>
+
+                                        <div class="summary-item row"><span
+                                                class="text col-12" id="error_text" style="color: red"></span></div>
              <form id="discount_code_form" action="" class="mt-5 mb-5">
                  <label for="discount_code">discount code</label>
                  <input type="text" class="form-control" id="discount_code"
@@ -111,6 +114,7 @@ $('#discount_code_form').on('submit', function (e) {
 
         },
         error: function (xhr, errmsg, err) {
+             $("#error_text").html('discount code is not valid')
 
         },
         contentType: "application/json",

@@ -95,3 +95,5 @@ def custom_logout(request):
     if basket:
         request.session[settings.BASKET_SESSION_ID] = basket
     return redirect(reverse('account:login'))
+
+

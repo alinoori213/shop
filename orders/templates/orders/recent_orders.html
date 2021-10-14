@@ -10,12 +10,12 @@
     <div class="col-12 d-flex justify-content-between">
       <div>Manage your <b>orders</b> and personal details</div>
       <div><a href="{% url "account:edit_details" %}">Change Details</a></div>
-      <div><a href="{% url "orders:recent-orders" %}">Recent Orders</a></div>
+
     </div>
     <hr />
   </div>
   <div class="container" style="max-width: 1000px">
-    {% for order in orders %}
+    {% for order in recent_orders %}
     <div class="row g-3">
       
       <div class="col-12 bg-light p-3 d-flex justify-content-between">

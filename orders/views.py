@@ -1,5 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http.response import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import datetime
+
+from django.urls import reverse
+from django.views import View
 
 from basket.basket import Basket
 
@@ -37,3 +42,17 @@ def user_orders(request):
     user_id = request.user.id
     orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
     return orders
+
+
+
+class RecentOrdersView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        try:
+            user_id = request.user.id
+            recent_orders = Order.objects.filter(user_id=user_id)[0:10]
+        except Order.DoesNotExist:
+            return redirect(reverse("account:login"))
+        return render(request, "orders/recent_orders.html", {
+            'recent_orders': recent_orders,
+        })

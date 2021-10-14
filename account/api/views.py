@@ -88,6 +88,7 @@ class CheckDiscount(generics.GenericAPIView):
             if discount_code == codes.discount_code and now < codes.expire_time and codes.used == False:
 
                 final_price = basket.get_total_price(codes.discount_percent)
+                request.session['discount_code'] = codes.discount_percent
                 data = {
                     'final_price': final_price,
 
